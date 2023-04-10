@@ -1,0 +1,15 @@
+{% for cnc in list_cnc %}
+
+<h1>{{cnc.database.rfid.operator_name}}</h1>
+
+{% for status in cnc.status_history %}
+
+<h2>{{status.status_time}}ggg{{status.status_number}}</h2>
+
+{% endfor %}
+
+{% endfor %}
+
+<h1>{{cnc1_status_leng}}</h1>
+
+<h3>{{time_per_day}}</h3>

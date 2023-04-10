@@ -1,0 +1,1244 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+#bar-chart {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+#line-chart {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+#bar-chart::before, #line-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 240px;
+  height: 30px;
+  left: 155px;
+  top: 254px;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart {
+  width: 500px;
+  height: 250px;
+  position: relative;
+}
+#pie-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 115px;
+  left: 315px;
+  top: 0;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 260px;
+  left: 70px;
+  width: 170px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+}
+.window{
+  box-sizing: border-box;
+  position:fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity linear 0.25s;
+  
+}
+.window:target{
+  visibility: visible;
+  opacity: 1;
+}
+.window-close-btn{
+  position: absolute;
+  top:2px;
+  right: 10px;
+}
+.window-body{
+  width: 1000px;
+  position: relative;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: 17.5%;
+}
+.overlay-close{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+.overlay{
+  background-color: rgba(0,0,0,0.1);
+}
+.layout1{
+  display: flex;
+  flex-direction: column;
+}
+.logo1{
+  width: 40%;
+  margin-right: auto;
+  background-color: #eaeaea;
+  width: 350px;
+  padding-left: 5%;
+}
+.table1{
+  width:100%;
+  bottom: 0;
+  font-size: 20px;
+  font-family: 'Times New Roman';
+  background-color: #f0f0f0;
+  
+}
+span{
+  justify-content: space-between;
+}
+table, th, td{
+  border-collapse: collapse;
+  border: 1px solid #929292 !important;
+  
+}
+.chart {
+ 
+  height: 25px;
+  background-color: #ddd;
+  display: flex;
+  position: relative; /* Thêm position: relative để có thể định dạng ::before */
+  margin: 15px;
+}
+
+.bar {
+  background-color: #acabab7e;
+  height: 100%;
+  animation: grow 2s ease-in-out;
+  position: relative; /* Thêm position: relative để có thể định dạng ::before */
+}
+
+.bar2::before {
+  content: "Error time: 30p (13h-13h30)";
+  font-size: 15px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+ 
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.bar2:hover::before {
+  display: block;
+}
+.bar1 {
+  width: 20%;
+  background-color: #51a226;
+}
+
+.bar2 {
+  width:20%;
+  background-color: #ff3e1d;
+}
+
+.bar3 {
+  width:20%;
+  background-color: #ffab00;
+}
+.bar4 {
+  width:40%;
+  background-color: #7e7e7e;
+}
+@keyframes grow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.bar1::before {
+  content: "Active time: 30p (13h-13h30)";
+  font-size: 15px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+ 
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.bar1:hover::before {
+  display: block;
+}
+.bar3::before {
+  content: "Done time: 30p (13h-13h30)";
+  font-size: 15px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+ 
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.bar3:hover::before {
+  display: block;
+}
+.bar4::before {
+  content: "Turn off time: 30p (13h-13h30)";
+  font-size: 15px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+ 
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.bar4:hover::before {
+  display: block;
+}
+.overview-bar1{
+  width: 72%;
+  background-color: rgba(153, 255, 58, 0.555)
+}
+.overview-bar2{
+  width: 72%;
+  background-color: rgba(255, 45, 45, 0.555)
+}
+.overview-bar3{
+  width: 72%;
+  background-color: rgba(247, 179, 35, 0.555)
+}
+.overview-bar4{
+  width: 72%;
+  background-color: rgba(112, 112, 111, 0.555)
+}
+.asset-filter {
+  background-color: #fff;
+  margin-right: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  width: 17%;
+  height: 650px;
+}
+
+.asset-filter h3 {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.asset-filter h5 {
+  margin-bottom: 5px;
+}
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sort-order {
+  background-color: #00aab2;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 15px;
+  margin-left: 10px;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.name-filter {
+  margin-bottom: 10px;
+}
+
+.machine-filter {
+  margin-bottom: 10px;
+}
+
+.machine-filter form {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.machine-filter label {
+  margin-right: 10px;
+}
+
+.search__input {
+  width: 100%;
+  padding: 8px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  
+  color: #575756;
+  background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #575756;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.search__input::placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input:hover,
+.search__input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+  background-position: 100% center;
+}
+
+.subunit-filter {
+  margin-bottom: 10px;
+}
+
+.subunit-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.manufacturer-filter {
+  margin-bottom: 10px;
+}
+
+.present-type-filter {
+  margin-bottom: 10px;
+}
+
+.present-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.toolbar {
+  background-color: #87AF4B;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.actions .button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.actions .button.primary {
+  background-color: white;
+  color: #87AF4B;
+  margin-left: 10px;
+}
+
+.actions .button:hover {
+  background-color: white;
+  color: #87AF4B;
+}
+
+.toolbar .logo img{
+  height: 40px;
+  width: 40px;
+}
+
+
+/* dialog */
+/* Styles for the overlay dialog container */
+/*.dialog.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 100%;
+ 
+  transition: opacity linear 0.2s;
+}*/
+
+/* Styles for the close button */
+.overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+/* Styles for the dialog body */
+.dialog-body {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+/* Styles for the summary table */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+/* Styles for table headers */
+.summary-table th {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+/* Styles for table cells */
+.summary-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Styles for alternating background color */
+.summary-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Styles for Gantt chart container */
+.gantt-chart {
+  margin-top: 20px;
+  position: relative;
+  height: 100px;
+  border: 1px solid #ddd;
+}
+
+/* Styles for Gantt chart rows */
+.gantt-row {
+  position: absolute;
+  width: 100%;
+  height: 33.33%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styles for Gantt chart tasks */
+.gantt-task {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Styles for Gantt chart task names */
+.gantt-task-name {
+  font-weight: bold;
+}
+
+/* Styles for Gantt chart task times */
+.gantt-task-time {
+  font-size: 0.6em;
+  margin-top: 5px;
+}
+
+/* Styles for Gantt chart hours */
+.gantt-hours {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+/* Styles for Gantt chart hours divs */
+.gantt-hours div {
+  width: calc(100% / 24);
+  text-align: center;
+}
+
+/* Styles for the overlay close button */
+.overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+/* Styles for the overlay dialog when it is targeted */
+.dialog:target {
+  visibility: visible;
+  opacity: 1; 
+}
+
+/* Styles forthe dialog header */
+.dialog-header {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  /* Styles for the dialog title */
+  .dialog-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  }
+  
+  /* Styles for the dialog close button */
+  .dialog-close {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  }
+  
+  /* Styles for the dialog content */
+  .dialog-content {
+  margin-top: 20px;
+  }
+  
+  /* Styles for the dialog form */
+  .dialog-form {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  /* Styles for the dialog form fields */
+  .dialog-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  /* Styles for the dialog form field labels */
+  .dialog-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  }
+  
+  /* Styles for the dialog form field inputs */
+  .dialog-input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+  }
+  
+  /* Styles for the dialog form submit button */
+  .dialog-submit {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #3f51b5;
+  color: #fff;
+  cursor: pointer;
+  }
+  
+  /* Styles for the dialog form cancel button */
+  .dialog-cancel {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+  }
+ 
+/*Styles for the overlay dialog container*/
+.dialog.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible; 
+  opacity: 1;
+  transition: opacity linear 0.2s;
+}
+
+/* Styles for the close button */
+.overlay-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+/* Styles for the dialog body */
+.dialog-body {
+  background-color: #ededef;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+/* Styles for the summary table */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+/* Styles for table headers */
+.summary-table th {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+/* Styles for table cells */
+.summary-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Styles for alternating background color */
+.summary-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Styles for Gantt chart container */
+.gantt-chart {
+  margin-top: 20px;
+  position: relative;
+  height: 100px;
+  border: 1px solid #ddd;
+}
+
+/* Styles for Gantt chart rows */
+.gantt-row {
+  position: absolute;
+  width: 100%;
+  height: 33.33%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Styles for Gantt chart tasks */
+.gantt-task {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 0.8em;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Styles for Gantt chart task names */
+.gantt-task-name {
+  font-weight: bold;
+}
+
+/* Styles for Gantt chart task times */
+.gantt-task-time {
+  font-size: 0.6em;
+  margin-top: 5px;
+}
+
+/* Styles for Gantt chart hours */
+.gantt-hours {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+
+/* Styles for Gantt chart hours divs */
+.gantt-hours div {
+  width: calc(100% / 24);
+  text-align: center;
+}
+
+
+
+/* ... */
+
+
+.overlay-close {
+position: absolute;
+width: 100%;
+height: 100%;
+cursor: default;
+}
+
+.dialog:target {
+visibility: visible;
+opacity: 1; 
+}
+
+.overlay {
+background-color: rgba(0,0,0,0.4);
+}
+
+.dialog-body {
+width: 1200px;
+position: relative;
+
+padding: 30px;
+}
+
+.dialog-close-btn {
+position: absolute;
+top: 2px;
+right: 6px;
+text-decoration: none;
+color: #333;
+}
+/* layout - item */
+.layout-item {
+  position: relative;
+  width: auto;
+  background-color: #fff;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  }
+  
+.layout {
+display: block;
+
+}
+
+/*  */
+.dialog-body .layout .layout-item p {
+
+padding: 5px;
+}
+.bgcolor{
+  background-color: #e6e6e8;
+}
+.chart1{
+  height: 25px;
+  background-color: #ddd;
+  display: flex;
+  position: relative; /* Thêm position: relative để có thể định dạng ::before */
+  margin: 15px;
+}
+.chart2 {
+  width: 400px;
+  height: 300px;
+  display: flex;
+}
+
+.y-axis {
+  width: 50px; /* Độ rộng của cột y */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.label1 {
+  font-size: 12px;
+}
+
+.columns2 {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.column2 {
+  width: 5%;
+  background-color: #ccc;
+  margin-right: 1px;
+  
+} */
+body{
+  font-family: Helvetica, sans-serif;
+}
+
+.heading{
+  text-align: center;
+  margin-top: 50px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pie-wrap{
+  border: 2px solid lightgrey;
+  width: 400px;
+  height: 400px;
+  margin: 10% 50px;
+  position: relative;
+  border-radius: 50%;
+  color: black;
+  overflow: hidden;
+}
+.pie-wrap .entry{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* *the individual entries* */
+
+.sky-blue{
+  background-color: lightskyblue;
+  height:50%;
+  width: 50%;
+  display: block;
+}
+
+.light-yellow{
+  background-color: lightyellow;
+  height:50%;
+  width: 50%;
+}
+.pink{
+  background-color: pink;
+  height:50%;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 50%;
+  clip-path: polygon(0 0, 100% 0%, 0% 100%);
+}
+
+.purple{
+  background-color: purple;
+  height:50%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  position: absolute;
+  clip-path:polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.green{
+  background-color: limegreen;
+  height:50%;
+  width: 50%;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  clip-path:polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+.wheat{
+  background-color: wheat;
+  height:50%;
+  width: 50%;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  clip-path:polygon(0% 0%, 100% 100%, 0% 100%);
+}
+.pie-wrap .purple p{
+  position: absolute;
+  top: 140px;
+  color: white;
+}
+.pie-wrap .purple p:first-child{
+  top: 120px;
+}
+
+.pie-wrap .green p{
+  position: absolute;
+  top: 20px;
+}
+
+.pie-wrap .green p:first-child{
+  top: 0px;
+}
+
+.pie-wrap .pink p, .pie-wrap .wheat p{
+  position: absolute;
+  left: 20px;
+  top: 80px;
+}
+
+.pie-wrap .pink, .pie-wrap .wheat{
+  justify-content: flex-start;
+}
+
+.pie-wrap .pink p:first-child, .pie-wrap .wheat p:first-child{
+  top: 100px;
+}
+.entry .entry-value{
+  display: none;
+  transition: all 500ms linear;
+}
+.entry:hover .entry-value{
+  display: block;
+}
+.entry{
+  transition: all 500ms linear ;
+}
+
+.key-wrap label{
+  display: block;
+  border: 1px solid;
+  width: 50px;
+  text-align: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+input[type="radio"]{
+  display: none;
+}
+.rice-label{
+  background-color: lightyellow;
+}
+.beans-label{
+  background-color: pink;
+}
+.plantain-label{
+  background-color: purple;
+  color: white;
+}
+.potato-label{
+  background-color: limegreen;
+}
+.yam-label{
+  background-color: wheat;
+}
+.pasta-label{
+  background-color: skyblue;
+}
+.text{
+  display: none;
+  margin-left: -50px;
+  position: absolute;
+  margin-top: 50px;
+  font-size: 20px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  border-bottom: 5px solid ;
+  border-top: 5px solid ;
+}
+.key-wrap label:active{
+  opacity: .5;
+}
+.rice-key:checked ~ .rice-text, .beans-key:checked ~ .beans-text, .plantain-key:checked ~ .plantain-text,  .potato-key:checked ~ .potato-text, .yam-key:checked ~ .yam-text, .pasta-key:checked ~ .pasta-text{
+  display: block;
+}
+.rice-text{
+  border-color: black;
+}
+.beans-text{
+  border-color:  pink;
+}
+.plantain-text{
+  border-color:  purple;
+}
+.potato-text{
+  border-color:  limegreen;
+}
+.yam-text{
+  border-color:  wheat;
+}
+.pasta-text{
+  border-color:  skyblue;
+}
+/* span{
+  width: calc(90%/24);
+} */
+.table2{
+ 
+  
+  width: 93%;
+  bottom: 0;
+  font-size: 20px;
+  font-family: 'Times New Roman';
+  background-color: #f0f0f0;
+  margin-left: 55px;
+  
+}
+.chart2{
+  height: 25px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  position: relative; /* Thêm position: relative để có thể định dạng ::before */
+ width: 100%;
+}
+.note1{
+  display: flex;
+  justify-content: center;
+}
+.note-point{
+  display: flex;
+  margin-left: 15px; margin-right: 15px;
+  align-items: center;
+}
+.circlecolor1,.circlecolor2,.circlecolor3,.circlecolor4,.circlecolor5,
+.circlecolor6,.circlecolor7,.circlecolor8,.circlecolor9,.circlecolor10,.circlecolor11,.circlecolor12{
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+.layout-item01{
+  position: relative;
+width: auto;
+
+margin-bottom: 25px;
+border-radius: 15px;
+}
+.circlecolor1, .bar5{
+  background-color: #fe8c00;
+}
+.circlecolor2,.bar6{
+  background-color: #3cb371;
+}
+.circlecolor3,.bar7{
+  background-color: #59666c;
+}
+.circlecolor4,.bar8{
+  background-color: #51adac;
+}
+.circlecolor5,.bar81{
+  background-color: #ce8559;
+}
+.circlecolor6,.bar82{
+  background-color: #88b14b;
+}
+.circlecolor7,.bar83{
+  background-color: #a6cee3;
+}
+.circlecolor8,.bar9{
+  background-color: #59666c;
+}
+.circlecolor9,.bar10{
+  background-color: #59666c;
+}
+.circlecolor10,.bar11{
+  background-color: #51adac;
+}
+.circlecolor11,.bar12{
+  background-color: #ce8559;
+}
+.circlecolor12,.bar13{
+  background-color: #88b14b;
+}
+
+
+/*  cnc */
+.card {
+  border-radius: 0;
+  border: none;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.card-body {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-top: none;
+}
+
+.progress {
+  height: 20px;
+}
+
+.progress-bar{
+  background-color: #51a226;
+}
+
+.logo1 {
+  padding: 20px;
+  }
+  
+  .logo1 img {
+  margin-right: 20px;
+  }
+  
+  .logo1 h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 0;
+  }
+  
+  .table1 {
+  padding: 20px;
+  }
+  
+  .chart {
+  display: flex;
+  height: 50px;
+  margin-bottom: 20px;
+  }
+  
+  .bar {
+  height: 100%;
+  }
+  
+  .bar1 {
+  background-color: #51a226;
+  }
+  
+  .bar2 {
+  background-color: #F5A623;
+  }
+  
+  .bar3 {
+  background-color: #FD003A;
+  }
+  
+  .bar4 {
+  background-color: #4291E1;
+  }
+  
+  .table1 span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  }
+  
+  .table1 table {
+  width: 60%;
+  margin-top: 20px;
+  }
+  
+  .table1 td {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  border-top: 1px solid #dee2e6;
+  }
+  
+  .table1 th {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 10px 15px;
+  border-top: 1px solid #dee2e6;
+  text-align: left;
+  vertical-align: middle;
+  }
+  
+  .table1 thead {
+  background-color: #f8f9fa;
+  }
+  
+  .table1 tbody tr:last-child td {
+  border-bottom: 1px solid #dee2e6;
+  }
+
